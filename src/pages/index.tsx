@@ -33,8 +33,6 @@ let Ha: React.FC<HaProps> = ({ text, num, link }) => {
 const Index = () => {
   return (
     <Layout>
-      <Box boxSize="100px"></Box>
-
       <Text fontSize="6xl" textAlign="center">
         Hello!!
       </Text>
