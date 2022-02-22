@@ -1,8 +1,8 @@
 import {
   Box,
+  Center,
   Container,
   Link,
-  Text,
   useColorModeValue,
 } from "@chakra-ui/react";
 import { DarkModeSwitch } from "./DarkModeSwitch";
@@ -11,12 +11,12 @@ export const NavBar = () => {
   return (
     <Box
       display="flex"
-      position="fixed"
+      position="relative"
       as="nav"
       w="100%"
-      bg={useColorModeValue("#ffffff40", "#20202380")}
+      bg={useColorModeValue("#fad0f7d3", "#6a96dae8")}
       css={{ backdropFilter: "blur(10px)" }}
-      zIndex={1}
+      zIndex={10}
     >
       <Container
         display="flex"
@@ -26,17 +26,19 @@ export const NavBar = () => {
         align="center"
         justify="space-between"
       >
-        <Link href="./" m={7}>
-          Home
-        </Link>
-        <Link href="./playground" m={7}>
-          Playground
-        </Link>
-        <Link href="./project" m={7}>
-          Project
-        </Link>
-        <DarkModeSwitch />
+        <Center width="100%">
+          <Link href="./" m={7}>
+            Home
+          </Link>
+          <Link href="./playground" m={7}>
+            Playground
+          </Link>
+          <Link href="./project" m={7}>
+            Project
+          </Link>
+        </Center>
       </Container>
+      <DarkModeSwitch />
     </Box>
   );
 };
