@@ -4,7 +4,7 @@ import { Layout } from "../components/Layout";
 const work = () => {
   return (
     <Layout>
-      <div>work</div>
+      <div>under develop!</div>
     </Layout>
   );
 };

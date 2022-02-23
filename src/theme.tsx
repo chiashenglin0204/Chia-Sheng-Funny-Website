@@ -23,12 +23,17 @@ const config = {
   useSystemColorMode: false,
 };
 
+const colors = {
+  black: "#16161D",
+  systemBrown: "#eead71e8",
+  systemPink: "#fad0f7d3",
+  systemBlue: "#6a96dae8",
+};
+
 const theme = extendTheme({
   config,
   styles,
-  colors: {
-    black: "#16161D",
-  },
+  colors,
   fonts,
   breakpoints,
 });

@@ -6,29 +6,20 @@ import {
   Box,
   Image,
   Center,
+  useColorModeValue,
+  Stack,
+  HStack,
 } from "@chakra-ui/react";
 // import Image from "next/image";
 
-import { DarkModeSwitch } from "../components/DarkModeSwitch";
-
 import { Layout } from "../components/Layout";
-
-interface HaProps {
-  text: string;
-  num: string;
-  link: string;
-}
-
-let Ha: React.FC<HaProps> = ({ text, num, link }) => {
-  return (
-    <Link href={link} isExternal>
-      <Button>
-        {" "}
-        {text} {num}
-      </Button>
-    </Link>
-  );
-};
+import {
+  FaFacebook,
+  FaGithub,
+  FaInstagram,
+  FaLinkedin,
+  FaTwitter,
+} from "react-icons/fa";
 
 const Index = () => {
   return (
@@ -52,11 +43,41 @@ const Index = () => {
           align="center"
         ></Image>
       </Center>
-      <Button isLoading={false} colorScheme="blue">
-        Button
-      </Button>
 
-      <Ha text={"ChiaSheng"} num={"Lin"} link={"https://chakra-ui.com"}></Ha>
+      <Stack
+        direction={["column", "row"]}
+        spacing="24px"
+        display="flex"
+        flexDirection="column"
+      >
+        <HStack mt={2}>
+          <Link href="https://github.com/chiashenglin0204" isExternal>
+            <Button colorScheme="telegram" rightIcon={<FaGithub />}>
+              chiashenglin0204
+            </Button>
+          </Link>
+          <Link href="https://www.linkedin.com/in/chiashenglin/" isExternal>
+            <Button colorScheme="linkedin" rightIcon={<FaLinkedin />}>
+              Chia-Sheng Lin
+            </Button>
+          </Link>
+        </HStack>
+        <HStack mt={2}>
+          <Link href="https://www.instagram.com/chiashenglin0204/" isExternal>
+            <Button colorScheme="cyan" rightIcon={<FaInstagram />}>
+              chiashenglin0204
+            </Button>
+          </Link>
+          <Link
+            href="https://www.facebook.com/profile.php?id=100005766782726"
+            isExternal
+          >
+            <Button colorScheme="facebook" rightIcon={<FaFacebook />}>
+              林家陞
+            </Button>
+          </Link>
+        </HStack>
+      </Stack>
     </Layout>
   );
 };
