@@ -3,6 +3,7 @@ import { Button, useColorModeValue } from "@chakra-ui/react";
 interface SystemButtonProps {
   children: any;
   rightIcon?: any;
+  onClick?: any;
   //toggleOn: boolean;
 }
 
@@ -11,7 +12,7 @@ export const SystemButton = (props: SystemButtonProps) => {
     <Button
       size="md"
       height="48px"
-      width="200px"
+      width="250px"
       border="2px"
       color={useColorModeValue("black", "white")}
       borderColor={useColorModeValue("black", "white")}

@@ -14,6 +14,13 @@ import {
   Container,
 } from "@chakra-ui/react";
 // import Image from "next/image";
+import {
+  MdPhone,
+  MdEmail,
+  MdLocationOn,
+  MdFacebook,
+  MdOutlineEmail,
+} from "react-icons/md";
 
 import { Layout } from "../components/Layout";
 import {
@@ -57,7 +64,7 @@ const Index = () => {
         Follow me on:
       </Text>
 
-      <Center>
+      <Center mb={50}>
         <Stack direction={"column"}>
           <Stack direction={["column", "row"]}>
             <Link href="https://github.com/chiashenglin0204" isExternal>
@@ -83,6 +90,27 @@ const Index = () => {
             >
               <SystemButton rightIcon={<FaFacebook />}>林家陞</SystemButton>
             </Link>
+          </Stack>
+        </Stack>
+      </Center>
+
+      <Text fontSize="3xl" align="center" mb={2}>
+        My contact:
+      </Text>
+      <Center>
+        <Stack direction={"column"}>
+          <Stack direction={["column", "row"]}>
+            <SystemButton rightIcon={<MdPhone />}>+1 2369983312</SystemButton>
+
+            <SystemButton
+              onClick={() => {
+                navigator.clipboard.writeText("bryan2160088@gmail.com");
+                alert("Copied Text: " + "bryan2160088@gmail.com");
+              }}
+              rightIcon={<MdEmail />}
+            >
+              bryan2160088@gmail.com
+            </SystemButton>
           </Stack>
         </Stack>
       </Center>
