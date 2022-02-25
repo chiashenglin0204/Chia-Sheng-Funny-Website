@@ -54,7 +54,7 @@ const Index = () => {
         textAlign="center"
         bg={useColorModeValue("systemGreen", "systemGreen")}
       >
-        Hello!! I'm Chia-Sheng Lin, a software develop from Taiwan 🇹🇼
+        Hello!! I'm Chia-Sheng Lin, a software developer from Taiwan 🇹🇼
       </Box>
       <Center m={10}>
         <Image
