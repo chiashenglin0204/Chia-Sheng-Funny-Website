@@ -9,7 +9,7 @@ export const Layout: React.FC<LayoutProps> = (props) => {
   return (
     <Box>
       <NavBar />
-      {props.children}
+      <Container maxW="container.sm">{props.children}</Container>
     </Box>
   );
 };

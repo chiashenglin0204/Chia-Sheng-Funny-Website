@@ -3,12 +3,16 @@ import {
   Center,
   color,
   Container,
+  Flex,
+  Heading,
+  Image,
   Link,
   useColorModeValue,
 } from "@chakra-ui/react";
 import { DarkModeSwitch } from "./DarkModeSwitch";
 import NextLink from "next/link";
 import { useRouter } from "next/router";
+import { DarkModeButton } from "./DarkModeButton";
 interface NavLinkProps {
   href: string;
   children: any;
@@ -24,7 +28,7 @@ const NavLink: React.FC<NavLinkProps> = (props): JSX.Element => {
             ? useColorModeValue("systemBrown", "systemBrown")
             : undefined
         }
-        color={props.toggleOn ? "#8f5b34" : "#fdfcfc"}
+        color={useColorModeValue("black", "white")}
         p={2}
         m={3}
         borderRadius="md"
@@ -55,9 +59,14 @@ export const NavBar = () => {
         justify="space-between"
       >
         <Center width="100%">
-          <NavLink href={"/"} toggleOn={router.pathname === "/"}>
-            Home
-          </NavLink>
+          <Flex align="center" mr={5}>
+            <Link href="/">
+              <Heading as="h1" size="md">
+                Chia-Sheng Lin
+              </Heading>
+            </Link>
+          </Flex>
+
           <NavLink
             href={"/playground"}
             toggleOn={router.pathname === "/playground"}
@@ -68,9 +77,9 @@ export const NavBar = () => {
           <NavLink href={"/project"} toggleOn={router.pathname === "/project"}>
             Project
           </NavLink>
+          <DarkModeButton />
         </Center>
       </Container>
-      <DarkModeSwitch />
     </Box>
   );
 };

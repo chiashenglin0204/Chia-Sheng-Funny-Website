@@ -25,6 +25,7 @@ const config = {
 
 const colors = {
   black: "#16161D",
+  white: "#fdfcfc",
   systemBrown: "#eead71e8",
   systemPink: "#fad0f7d3",
   systemBlue: "#6a96dae8",
