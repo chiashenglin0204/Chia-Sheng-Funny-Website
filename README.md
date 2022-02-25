@@ -1,1 +1,1 @@
-Personal Funny website, learning new thing and also making interesting content!
+Personal website, learning new thing and also making interesting content!
