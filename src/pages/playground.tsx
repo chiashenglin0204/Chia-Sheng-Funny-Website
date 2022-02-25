@@ -1,39 +1,55 @@
-import { Box, Button, Center, Image, VStack } from "@chakra-ui/react";
+import {
+  Box,
+  Button,
+  Center,
+  Image,
+  useColorModeValue,
+  VStack,
+  Heading,
+} from "@chakra-ui/react";
 import React, { useEffect, useState } from "react";
 import { Layout } from "../components/Layout";
 
-const hachi = () => {
-  const [image, setImage] = useState("");
-  const [currentNum, setCurrentNum] = useState(() => {
+const Playground = () => {
+  const [image, setImage] = useState<string>("");
+  const [currentNum, setCurrentNum] = useState<number>(() => {
     console.log("run");
-
     return 1;
   });
-  const coolstuff = async (): Promise<string> => {
+
+  const getNewImage = async (): Promise<string> => {
     const response = await fetch("https://api.thecatapi.com/v1/images/search", {
       method: "GET", // *GET, POST, PUT, DELETE, etc.
     });
 
     const res = await response.json();
-
-    console.log(res.data);
+    //console.log(res.data);
     //setImage(res.message);
     setImage(res[0].url);
-
-    console.log(res);
-
+    //console.log(res);
     return res;
   };
 
   useEffect(() => {
-    coolstuff();
+    getNewImage();
   }, [currentNum]);
 
   return (
     <Layout>
-      <Center pt={40}>
-        <VStack>
-          <div>hachi</div>
+      <Center mt={5}>
+        <VStack spacing={5}>
+          <Heading> {"Let's Play with some cats 😼!!"} </Heading>
+          <Box
+            // mt={100}
+            // mb={6}
+            p={3}
+            borderRadius="xl"
+            textAlign="center"
+            bg={useColorModeValue("systemGreen", "systemGreen")}
+          >
+            Get your cat by clicking the button below 😅
+          </Box>
+
           <Image boxSize="500px" objectFit="cover" src={image} alt="" />
           <Button
             onClick={() => {
@@ -49,4 +65,4 @@ const hachi = () => {
   );
 };
 
-export default hachi;
+export default Playground;

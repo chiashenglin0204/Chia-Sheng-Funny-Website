@@ -1,0 +1,22 @@
+interface Job {
+  title: string;
+  description: string;
+}
+
+const [jobs, setJobs] = useState<Job[]>([
+    {
+      title: "Janitor",
+      description: "Clean toilets",
+    },
+    {
+      title: "Programmer",
+      description: "Being depressed",
+    },
+  ]);
+
+setJobs([
+                ...jobs,
+                { title: "Beggar", description: "Riding lambo" },
+              ])
+
+console.log(jobs);
