@@ -121,7 +121,7 @@ const Index = () => {
         </Stack>
       </Center>
 
-      <Center mt={8}>
+      <Center m={8}>
         <Box>
           {emailCopied ? (
             <Alert status="success">
