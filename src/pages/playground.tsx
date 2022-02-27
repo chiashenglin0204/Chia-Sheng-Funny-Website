@@ -45,7 +45,7 @@ const Playground = () => {
             p={3}
             borderRadius="xl"
             textAlign="center"
-            bg={useColorModeValue("systemGreen", "systemGreen")}
+            bg={useColorModeValue("systemLightGreen", "systemGreen")}
           >
             Get your cat by clicking the button below 😅
           </Box>

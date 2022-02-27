@@ -52,7 +52,7 @@ const Index = () => {
         p={3}
         borderRadius="xl"
         textAlign="center"
-        bg={useColorModeValue("systemGreen", "systemGreen")}
+        bg={useColorModeValue("systemLightGreen", "systemGreen")}
       >
         Hello!! I'm Chia-Sheng Lin, a software developer from Taiwan 🇹🇼
       </Box>

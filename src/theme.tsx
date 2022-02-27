@@ -30,6 +30,7 @@ const colors = {
   systemPink: "#fad0f7d3",
   systemBlue: "#6a96dae8",
   systemGreen: "#8d9b6a",
+  systemLightGreen: "#9fe29f",
 };
 
 const theme = extendTheme({
