@@ -50,7 +50,13 @@ const Playground = () => {
             Get your cat by clicking the button below 😅
           </Box>
 
-          <Image boxSize="500px" objectFit="cover" src={image} alt="" />
+          <Image
+            boxSize="500px"
+            objectFit="cover"
+            src={image}
+            alt=""
+            borderRadius="15px"
+          />
           <Button
             onClick={() => {
               setCurrentNum(currentNum + 1);
