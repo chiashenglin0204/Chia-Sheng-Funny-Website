@@ -63,7 +63,7 @@ const Playground = () => {
             }}
           >
             {" "}
-            image number : {currentNum}
+            Cat number : {currentNum}
           </Button>
         </VStack>
       </Center>
