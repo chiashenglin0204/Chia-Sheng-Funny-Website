@@ -1,4 +1,5 @@
 import { Box, Container } from "@chakra-ui/react";
+import { DesktopNavBar } from "./DesktopNavBar";
 import { MobileNavBar } from "./MobileNavBar";
 import { NavBar } from "./NavBar";
 
@@ -9,8 +10,11 @@ interface LayoutProps {
 export const Layout: React.FC<LayoutProps> = (props) => {
   return (
     <Box>
-      <Box display="flex">
-        <NavBar />
+      <Box display={{ sm: "none", md: "flex", lg: "flex" }}>
+        <DesktopNavBar />
+      </Box>
+      <Box display={{ sm: "flex", md: "none" }}>
+        <MobileNavBar />
       </Box>
       <Container maxW="container.sm">{props.children}</Container>
     </Box>
