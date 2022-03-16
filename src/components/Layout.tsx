@@ -9,7 +9,9 @@ interface LayoutProps {
 export const Layout: React.FC<LayoutProps> = (props) => {
   return (
     <Box>
-      <NavBar />
+      <Box display="flex">
+        <NavBar />
+      </Box>
       <Container maxW="container.sm">{props.children}</Container>
     </Box>
   );

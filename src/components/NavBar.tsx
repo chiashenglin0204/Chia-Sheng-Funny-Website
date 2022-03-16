@@ -18,6 +18,7 @@ import { DarkModeSwitch } from "./DarkModeSwitch";
 import NextLink from "next/link";
 import { useRouter } from "next/router";
 import { DarkModeButton } from "./DarkModeButton";
+
 import {
   AddIcon,
   EditIcon,
@@ -91,30 +92,6 @@ export const NavBar = () => {
           </NavLink>
           <DarkModeButton />
         </Center>
-        <Box display={{ sm: "flex", md: "none", lg: "flex" }}>
-          <Menu>
-            <MenuButton
-              as={IconButton}
-              aria-label="Options"
-              icon={<HamburgerIcon />}
-              variant="outline"
-            />
-            <MenuList>
-              <MenuItem icon={<AddIcon />} command="⌘T">
-                New Tab
-              </MenuItem>
-              <MenuItem icon={<ExternalLinkIcon />} command="⌘N">
-                New Window
-              </MenuItem>
-              <MenuItem icon={<RepeatIcon />} command="⌘⇧N">
-                Open Closed Tab
-              </MenuItem>
-              <MenuItem icon={<EditIcon />} command="⌘O">
-                Open File...
-              </MenuItem>
-            </MenuList>
-          </Menu>
-        </Box>
       </Container>
     </Box>
   );
