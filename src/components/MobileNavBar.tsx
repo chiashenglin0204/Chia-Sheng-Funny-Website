@@ -10,6 +10,7 @@ import {
   Link,
   Menu,
   MenuButton,
+  MenuDivider,
   MenuItem,
   MenuList,
   useColorModeValue,
@@ -51,7 +52,45 @@ const NavLink: React.FC<NavLinkProps> = (props): JSX.Element => {
   );
 };
 
-export const NavBar = () => {
+interface NavigationMenuProps {
+  path: string;
+}
+
+const NavigationMenu: React.FC<NavigationMenuProps> = (props): JSX.Element => {
+  const router = useRouter();
+
+  return (
+    <Menu autoSelect={false}>
+      <MenuButton
+        as={IconButton}
+        aria-label="Options"
+        icon={<HamburgerIcon />}
+        variant="outline"
+      />
+      <MenuList>
+        <MenuItem onClick={() => router.push("/playground")}>
+          <NavLink href={"/works"} toggleOn={router.pathname === "/playground"}>
+            Cat-Playground
+          </NavLink>
+        </MenuItem>
+        <MenuItem onClick={() => router.push("/projects")}>
+          <NavLink
+            href={"/projects"}
+            toggleOn={router.pathname === "/projects"}
+          >
+            Projects
+          </NavLink>
+        </MenuItem>
+        <MenuDivider />
+        <MenuItem>
+          <DarkModeSwitch />
+        </MenuItem>
+      </MenuList>
+    </Menu>
+  );
+};
+
+export const MobileNavBar = () => {
   const router = useRouter();
   return (
     <Box
@@ -79,41 +118,10 @@ export const NavBar = () => {
             </Link>
           </Flex>
 
-          <NavLink
-            href={"/playground"}
-            toggleOn={router.pathname === "/playground"}
-          >
-            Cat-Playground
-          </NavLink>
-
-          <NavLink href={"/project"} toggleOn={router.pathname === "/project"}>
-            Project
-          </NavLink>
           <DarkModeButton />
         </Center>
         <Box display={{ sm: "flex", md: "none", lg: "flex" }}>
-          <Menu>
-            <MenuButton
-              as={IconButton}
-              aria-label="Options"
-              icon={<HamburgerIcon />}
-              variant="outline"
-            />
-            <MenuList>
-              <MenuItem icon={<AddIcon />} command="⌘T">
-                New Tab
-              </MenuItem>
-              <MenuItem icon={<ExternalLinkIcon />} command="⌘N">
-                New Window
-              </MenuItem>
-              <MenuItem icon={<RepeatIcon />} command="⌘⇧N">
-                Open Closed Tab
-              </MenuItem>
-              <MenuItem icon={<EditIcon />} command="⌘O">
-                Open File...
-              </MenuItem>
-            </MenuList>
-          </Menu>
+          <NavigationMenu path={router.pathname}></NavigationMenu>
         </Box>
       </Container>
     </Box>

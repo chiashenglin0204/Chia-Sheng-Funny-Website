@@ -51,7 +51,7 @@ const NavLink: React.FC<NavLinkProps> = (props): JSX.Element => {
   );
 };
 
-export const NavBar = () => {
+export const DesktopNavBar = () => {
   const router = useRouter();
   return (
     <Box
