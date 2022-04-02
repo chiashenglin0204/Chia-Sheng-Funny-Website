@@ -10,10 +10,10 @@ interface LayoutProps {
 export const Layout: React.FC<LayoutProps> = (props) => {
   return (
     <Box>
-      <Box display={{ sm: "none", md: "flex", lg: "flex" }}>
+      <Box display={{ base: "none", md: "flex" }}>
         <DesktopNavBar />
       </Box>
-      <Box display={{ sm: "flex", md: "none" }}>
+      <Box display={{ base: "flex", md: "none" }}>
         <MobileNavBar />
       </Box>
       <Container maxW="container.sm">{props.children}</Container>
