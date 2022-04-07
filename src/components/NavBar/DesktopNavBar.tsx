@@ -9,8 +9,8 @@ import {
 } from "@chakra-ui/react";
 import NextLink from "next/link";
 import { useRouter } from "next/router";
-import { DarkModeButton } from "./DarkModeButton";
-import { NavLink } from "./NavLink";
+import { DarkModeButton } from "../DarkModeButton";
+import { NavLink } from "../NavLink";
 
 export const DesktopNavBar = () => {
   const router = useRouter();

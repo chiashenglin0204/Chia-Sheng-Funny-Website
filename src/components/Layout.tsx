@@ -1,7 +1,6 @@
 import { Box, Container } from "@chakra-ui/react";
-import { DesktopNavBar } from "./DesktopNavBar";
-import { MobileNavBar } from "./MobileNavBar";
-import { NavBar } from "./NavBar";
+import { DesktopNavBar } from "./NavBar/DesktopNavBar";
+import { MobileNavBar } from "./NavBar/MobileNavBar";
 
 interface LayoutProps {
   children: JSX.Element[] | JSX.Element;

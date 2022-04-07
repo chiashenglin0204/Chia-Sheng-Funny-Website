@@ -6,9 +6,7 @@ import SplitScreen from "../components/SplitScreen";
 const work = () => {
   return (
     <Layout>
-      <Box>
-        <SplitScreen></SplitScreen>
-      </Box>
+      <SplitScreen></SplitScreen>
     </Layout>
   );
 };

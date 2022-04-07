@@ -14,9 +14,9 @@ import {
 } from "@chakra-ui/react";
 
 import { useRouter } from "next/router";
-import { DarkModeButton } from "./DarkModeButton";
 import { HamburgerIcon } from "@chakra-ui/icons";
-import { NavLink } from "./NavLink";
+import { NavLink } from "../NavLink";
+import { DarkModeButton } from "../DarkModeButton";
 interface NavLinkProps {
   href: string;
   children: any;
