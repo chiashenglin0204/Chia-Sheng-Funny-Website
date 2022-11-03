@@ -14,7 +14,11 @@ import {
 	useColorModeValue,
 	Container,
 	VStack,
+	List,
+	ListItem,
+	ListIcon,
 } from '@chakra-ui/react';
+import { MdCheckCircle, MdSettings } from 'react-icons/md';
 
 interface IBlogTags {
 	tags: Array<string>;
@@ -116,98 +120,38 @@ const ArticleList = () => {
 					<Heading size="md" as="i">
 						Agile Developer Intern
 					</Heading>
-					<Text
-						as="p"
-						marginTop="2"
-						color={useColorModeValue('gray.700', 'gray.200')}
-						fontSize="lg"
-					>
-						What I do:
-						Build novel features and perform bug fixes through practical
-						programming design using JavaScript , HTML, and CSS to deliver
-						clients an improved product. 
-						Develop, maintain and implement
-						automated unit testing using Jasmine and Cypress frameworks Adopt
-						lean and agile software development principles by collaborating in a
-						team setting and using online tools such as GitHub, Gerrit and JIRA
-						to organize workflow Reduce 25% bug count by working on a codebase
-						using debugging tool and end-to-end software development principle
-						Perform code review to certify the implementation of features and
-						consolidate code performance
-					</Text>
-					<BlogAuthor name="John Doe" date={new Date('2021-04-06T19:01:27Z')} />
+					<Text as="b">What I do:</Text>
+					<List spacing={3}>
+						<ListItem>
+							<ListIcon as={MdCheckCircle} color="green.500" />
+							Build novel features and perform bug fixes through practical
+							programming design using JavaScript , HTML, and CSS to deliver
+							clients an improved product.
+						</ListItem>
+						<ListItem>
+							<ListIcon as={MdCheckCircle} color="green.500" />
+							Develop, maintain and implement automated unit testing using
+							Jasmine and Cypress frameworks
+						</ListItem>
+						<ListItem>
+							<ListIcon as={MdCheckCircle} color="green.500" />
+							Adopt lean and agile software development principles by
+							collaborating in a team setting and using online tools such as
+							GitHub, Gerrit and JIRA to organize workflow
+						</ListItem>
+						{/* You can also use custom icons from react-icons */}
+						<ListItem>
+							<ListIcon as={MdSettings} color="green.500" />
+							Reduce 25% bug count by working on a codebase using debugging tool
+							and end-to-end software development principle
+						</ListItem>
+					</List>
+					<BlogAuthor
+						name="Chia-Sheng Lin"
+						date={new Date('2022-11-01T19:01:27Z')}
+					/>
 				</Box>
 			</Box>
-			<Heading as="h2" marginTop="5">
-				Latest articles
-			</Heading>
-			<Divider marginTop="5" />
-			<Wrap spacing="30px" marginTop="5">
-				<WrapItem width={{ base: '100%', sm: '45%', md: '45%', lg: '30%' }}>
-					<Box w="100%">
-						<Box borderRadius="lg" overflow="hidden">
-							<Link textDecoration="none" _hover={{ textDecoration: 'none' }}>
-								<Image
-									transform="scale(1.0)"
-									src={
-										'https://images.unsplash.com/photo-1499951360447-b19be8fe80f5?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=800&q=80'
-									}
-									alt="some text"
-									objectFit="contain"
-									width="100%"
-									transition="0.3s ease-in-out"
-									_hover={{
-										transform: 'scale(1.05)',
-									}}
-								/>
-							</Link>
-						</Box>
-						<BlogTags tags={['Engineering', 'Product']} marginTop="3" />
-						<Heading fontSize="xl" marginTop="2">
-							<Link textDecoration="none" _hover={{ textDecoration: 'none' }}>
-								Some blog title
-							</Link>
-						</Heading>
-						<Text as="p" fontSize="md" marginTop="2">
-							Lorem Ipsum is simply dummy text of the printing and typesetting
-							industry. Lorem Ipsum has been the industry's standard dummy text
-							ever since the 1500s, when an unknown printer took a galley of
-							type and scrambled it to make a type specimen book.
-						</Text>
-						<BlogAuthor
-							name="John Doe"
-							date={new Date('2021-04-06T19:01:27Z')}
-						/>
-					</Box>
-				</WrapItem>
-			</Wrap>
-			<VStack paddingTop="40px" spacing="2" alignItems="flex-start">
-				<Heading as="h2">What we write about</Heading>
-				<Text as="p" fontSize="lg">
-					Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec
-					condimentum quam arcu, eu tempus tortor molestie at. Vestibulum
-					pretium condimentum dignissim. Vestibulum ultrices vitae nisi sed
-					imperdiet. Mauris quis erat consequat, commodo massa quis, feugiat
-					sapien. Suspendisse placerat vulputate posuere. Curabitur neque
-					tortor, mattis nec lacus non, placerat congue elit.
-				</Text>
-				<Text as="p" fontSize="lg">
-					Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec
-					condimentum quam arcu, eu tempus tortor molestie at. Vestibulum
-					pretium condimentum dignissim. Vestibulum ultrices vitae nisi sed
-					imperdiet. Mauris quis erat consequat, commodo massa quis, feugiat
-					sapien. Suspendisse placerat vulputate posuere. Curabitur neque
-					tortor, mattis nec lacus non, placerat congue elit.
-				</Text>
-				<Text as="p" fontSize="lg">
-					Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec
-					condimentum quam arcu, eu tempus tortor molestie at. Vestibulum
-					pretium condimentum dignissim. Vestibulum ultrices vitae nisi sed
-					imperdiet. Mauris quis erat consequat, commodo massa quis, feugiat
-					sapien. Suspendisse placerat vulputate posuere. Curabitur neque
-					tortor, mattis nec lacus non, placerat congue elit.
-				</Text>
-			</VStack>
 		</Container>
 	);
 };
