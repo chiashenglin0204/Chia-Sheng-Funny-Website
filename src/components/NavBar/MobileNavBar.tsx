@@ -48,8 +48,8 @@ const NavigationMenu: React.FC<NavigationMenuProps> = (props): JSX.Element => {
           </NavLink>
         </MenuItem>
         <MenuItem>
-          <NavLink href={"/project"} toggleOn={router.pathname === "/project"}>
-            Projects
+          <NavLink href={"/workExperience"} toggleOn={router.pathname === "/workExperience"}>
+            Work Experience
           </NavLink>
         </MenuItem>
       </MenuList>
