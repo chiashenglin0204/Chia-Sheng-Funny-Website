@@ -111,7 +111,7 @@ const ArticleList = () => {
 					justifyContent="center"
 					marginTop={{ base: '3', sm: '0' }}
 				>
-					<BlogTags tags={['Software Development']} />
+					<BlogTags tags={['Full-Stack Development']} />
 					<Heading marginTop="1">
 						<Link textDecoration="none" _hover={{ textDecoration: 'none' }}>
 							SAP Canada

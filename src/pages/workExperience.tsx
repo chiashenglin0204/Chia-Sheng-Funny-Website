@@ -1,12 +1,12 @@
 import { Box, Stack } from "@chakra-ui/react";
 import React from "react";
 import { Layout } from "../components/Layout";
-import SplitScreen from "../components/ArticleList";
+import ArticleList from "../components/ArticleList";
 
 const work = () => {
   return (
     <Layout>
-      <SplitScreen></SplitScreen>
+      <ArticleList></ArticleList>
     </Layout>
   );
 };
